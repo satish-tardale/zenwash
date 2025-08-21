@@ -55,24 +55,22 @@ const Features: React.FC = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-cyan-200"
+              className="group relative bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-cyan-200"
             >
-          
-              
               {/* Icon */}
               <div className="bg-gradient-to-r from-blue-900 to-cyan-400 text-white p-3 rounded-xl inline-flex mb-6 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-900 transition-colors duration-200">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-blue-900 transition-colors duration-200">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                 {feature.description}
               </p>
 
