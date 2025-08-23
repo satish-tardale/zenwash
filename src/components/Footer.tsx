@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Twitter, Instagram, Linkedin, Facebook } from "lucide-react";
 import emailjs from "emailjs-com";
+import mainzenlogo from '../assets/mainzenlogo.png';
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -75,60 +76,64 @@ const Footer: React.FC = () => {
   return (
     <footer className="py-24 relative bg-black text-white overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-white/20"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 mb-12">
-          {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <img
-                src="src/assets/newlogedited-removebg-preview.png"
-                alt="Zen Wash Logo"
-                className="h-14 w-18"
-              />
-              <span className="text-2xl font-bold">ZenWash.In</span>
-            </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              The future of laundry delivery is here. Experience premium care,
-              eco-friendly processes, and unmatched convenience.
-            </p>
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  {/* Main Footer Content */}
+  <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
+    {/* Brand Section */}
+    <div className="lg:col-span-2 col-span-2">
+      <div className="flex items-center space-x-2 mb-6">
+        <img
+          src={mainzenlogo}
+          alt="Zen Wash Logo"
+          className="h-14 w-18"
+        />
+        <span className="text-2xl font-bold">ZenWash.In</span>
+      </div>
+      <p className="text-gray-300 mb-6 leading-relaxed">
+        The future of laundry delivery is here. Experience premium care,
+        eco-friendly processes, and unmatched convenience.
+      </p>
 
-            {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-sm text-gray-300">
-                <Mail className="h-4 w-4 text-cyan-400" />
-                <span>myzenwash@gmail.com</span>
-              </div>
-              <div className="flex items-center space-x-3 text-sm text-gray-300">
-                <Phone className="h-4 w-4 text-cyan-400" />
-                <span>9960435751</span>
-              </div>
-              <div className="flex items-center space-x-3 text-sm text-gray-300">
-                <MapPin className="h-4 w-4 text-cyan-400" />
-                <span>Pune</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer Links */}
-          {footerSections.map((section, index) => (
-            <div key={index}>
-              <h3 className="font-semibold text-white mb-4">{section.title}</h3>
-              <ul className="space-y-3">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <button
-                      onClick={handleComingSoon}
-                      className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm"
-                    >
-                      {link}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      {/* Contact Info */}
+      <div className="space-y-3">
+        <div className="flex items-center space-x-3 text-sm text-gray-300">
+          <Mail className="h-4 w-4 text-cyan-400" />
+          <span>myzenwash@gmail.com</span>
         </div>
+        <div className="flex items-center space-x-3 text-sm text-gray-300">
+          <Phone className="h-4 w-4 text-cyan-400" />
+          <span>9960435751</span>
+        </div>
+        <div className="flex items-center space-x-3 text-sm text-gray-300">
+          <MapPin className="h-4 w-4 text-cyan-400" />
+          <span>Pune</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Footer Links */}
+    {footerSections.map((section, index) => (
+      <div key={index} className="col-span-1">
+        <h3 className="font-semibold text-white mb-4">{section.title}</h3>
+        <ul className="space-y-3">
+          {section.links.map((link, linkIndex) => (
+            <li key={linkIndex}>
+              <button
+                onClick={handleComingSoon}
+                className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm"
+              >
+                {link}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* Newsletter Signup */}
         <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-12">

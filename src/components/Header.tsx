@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import mainzenlogo from '../assets/mainzenlogo.png';
+
+
 
 interface HeaderProps {
   onComingSoonClick: () => void;
@@ -27,6 +30,7 @@ const Header: React.FC<HeaderProps> = ({ onComingSoonClick }) => {
     { name: "How it Works", href: "#features" },
     { name: "Pricing", href: "#pricing" },
     { name: "About Us", href: "#about" },
+    { name: "Contact", href:"#contact"}
   ];
 
   return (
@@ -40,7 +44,8 @@ const Header: React.FC<HeaderProps> = ({ onComingSoonClick }) => {
           {/* Logo */}
           <div className="flex justify-between items-center py-2">
             <img
-              src="src/assets/newlogedited-removebg-preview.png"
+              src={mainzenlogo}
+              
               alt="Zen Wash Logo"
               className="h-14 w-18"
             />
@@ -93,19 +98,12 @@ const Header: React.FC<HeaderProps> = ({ onComingSoonClick }) => {
                 <button
                   key={item.name}
                   onClick={onComingSoonClick}
-                  className="text-gray-600 hover:text-blue-900 transition-colors duration-200 font-medium text-left"
+                  className="  to-cyan-400 hover:text-blue-900 transition-colors duration-200 font-medium text-left"
                 >
                   {item.name}
                 </button>
               ))}
-              <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
-                <button
-                  onClick={onComingSoonClick}
-                  className="bg-gradient-to-r from-blue-900 to-cyan-400 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200 font-medium"
-                >
-                  Contact Us
-                </button>
-              </div>
+            
             </div>
           </div>
         )}

@@ -80,75 +80,61 @@ const Services: React.FC<ServicesProps> = ({ onComingSoonClick }) => {
         </div>
 
         {/* Mobile Slider View */}
-        <div className="lg:hidden mb-8 relative overflow-hidden">
+    <div className="lg:hidden mb-8 relative">
+  {/* Horizontal scroll container */}
+  <div className="flex space-x-4 px-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+    {services.map((service, index) => (
+      <div
+        key={index}
+        className="min-w-[85%] sm:min-w-[70%] shrink-0 snap-center"
+      >
+        <div
+          className={`relative bg-white border rounded-2xl shadow-md p-6 text-center ${
+            service.popular
+              ? "border-cyan-200 scale-105"
+              : "border-gray-200"
+          } transition-transform duration-300`}
+        >
+          {/* Header */}
           <div
-            className="flex transition-transform duration-700 ease-in-out"
-            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            className={`bg-gradient-to-r ${service.gradient} ${service.textColor} p-6 rounded-xl mb-6`}
           >
-            {services.map((service, index) => (
-              <div key={index} className="w-full shrink-0 px-2">
-                <div
-                  className={`relative bg-white border rounded-2xl shadow-md p-6 text-center ${
-                    service.popular
-                      ? "border-cyan-200 scale-105"
-                      : "border-gray-200"
-                  } transition-transform duration-300`}
-                >
-                 
+            <h3 className="text-2xl font-bold mb-2">{service.name}</h3>
+            <p className="mt-2 opacity-90">{service.description}</p>
+            <div className="mt-3 text-sm opacity-75">
+              Pricing available at launch
+            </div>
+          </div>
 
-                  {/* Header */}
-                  <div
-                    className={`bg-gradient-to-r ${service.gradient} ${service.textColor} p-6 rounded-xl mb-6`}
-                  >
-                    <h3 className="text-2xl font-bold mb-2">{service.name}</h3>
-                    <p className="mt-2 opacity-90">{service.description}</p>
-                    <div className="mt-3 text-sm opacity-75">
-                      Pricing available at launch
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div className="space-y-3 mb-6">
-                    {service.features.map((feature, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center justify-center space-x-2"
-                      >
-                        <CheckCircle className="w-5 h-5 text-green-500" />
-                        <span className="text-sm text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <button
-                    onClick={onComingSoonClick}
-                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                      service.popular
-                        ? "bg-gradient-to-r from-blue-900 to-cyan-400 text-white hover:shadow-lg hover:scale-105"
-                        : "bg-gray-100 text-gray-900 hover:bg-gray-200"
-                    }`}
-                  >
-                    Coming Soon
-                  </button>
-                </div>
+          {/* Features (vertical checklist) */}
+          <div className="flex flex-col items-start space-y-3 mb-6">
+            {service.features.map((feature, i) => (
+              <div key={i} className="flex items-center space-x-2">
+                <CheckCircle className="w-5 h-5 text-green-500" />
+                <span className="text-sm text-gray-700">{feature}</span>
               </div>
             ))}
           </div>
 
-          {/* Slider Dots */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {services.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveIndex(i)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  activeIndex === i ? "bg-blue-600" : "bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
+          {/* CTA */}
+          <button
+            onClick={onComingSoonClick}
+            className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
+              service.popular
+                ? "bg-gradient-to-r from-blue-900 to-cyan-400 text-white hover:shadow-lg hover:scale-105"
+                : "bg-gray-100 text-gray-900 hover:bg-gray-200"
+            }`}
+          >
+            Coming Soon
+          </button>
         </div>
+      </div>
+    ))}
+  </div>
+
+
+</div>
+
 
         {/* Desktop Grid View */}
         <div className="hidden lg:grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
@@ -177,17 +163,18 @@ const Services: React.FC<ServicesProps> = ({ onComingSoonClick }) => {
                 </div>
               </div>
 
-              <div className="space-y-4 mb-8">
-                {service.features.map((feature, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-center space-x-3"
-                  >
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
+           <div className="flex flex-col items-start space-y-4 mb-8">
+  {service.features.map((feature, i) => (
+    <div
+      key={i}
+      className="flex items-center space-x-3"
+    >
+      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+      <span className="text-gray-700">{feature}</span>
+    </div>
+  ))}
+</div>
+
 
               <button
                 onClick={onComingSoonClick}
@@ -204,43 +191,45 @@ const Services: React.FC<ServicesProps> = ({ onComingSoonClick }) => {
         </div>
 
         {/* Additional Services */}
-        <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            Additional Services
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto justify-items-center">
-            {[
-              {
-                icon: <Shirt className="h-6 w-6" />,
-                name: "Dry Cleaning",
-                desc: "Professional dry cleaning",
-              },
-              {
-                icon: <Clock className="h-6 w-6" />,
-                name: "Express Service",
-                desc: "Same-day turnaround",
-              },
-              {
-                icon: <CheckCircle className="h-6 w-6" />,
-                name: "Stain Removal",
-                desc: "Specialized treatment",
-              },
-            ].map((service, index) => (
-              <div key={index} className="text-center p-4">
-                <div className="bg-gradient-to-r from-blue-900 to-cyan-400 text-white p-3 rounded-xl inline-flex mb-3">
-                  {service.icon}
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-1">
-                  {service.name}
-                </h4>
-                <p className="text-sm text-gray-600">{service.desc}</p>
-                <span className="text-xs text-blue-600 font-medium mt-2 block">
-                  Coming Soon
-                </span>
-              </div>
-            ))}
-          </div>
+      <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8">
+  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+    Additional Services
+  </h3>
+  
+  <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+    {[
+      {
+        icon: <Shirt className="h-6 w-6" />,
+        name: "Dry Cleaning",
+        desc: "Professional dry cleaning",
+      },
+      {
+        icon: <Clock className="h-6 w-6" />,
+        name: "Express Service",
+        desc: "Same-day turnaround",
+      },
+      {
+        icon: <CheckCircle className="h-6 w-6" />,
+        name: "Stain Removal",
+        desc: "Specialized treatment",
+      },
+    ].map((service, index) => (
+      <div key={index} className="text-center p-4">
+        <div className="bg-gradient-to-r from-blue-900 to-cyan-400 text-white p-3 rounded-xl inline-flex mb-3">
+          {service.icon}
         </div>
+        <h4 className="font-semibold text-gray-900 mb-1">
+          {service.name}
+        </h4>
+        <p className="text-sm text-gray-600">{service.desc}</p>
+        <span className="text-xs text-blue-600 font-medium mt-2 block">
+          Coming Soon
+        </span>
+      </div>
+    ))}
+  </div>
+</div>
+
       </div>
     </section>
   );

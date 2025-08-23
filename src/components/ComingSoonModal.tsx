@@ -10,7 +10,7 @@ const ComingSoonModal: React.FC<ComingSoonModalProps> = ({ isOpen, onClose }) =>
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-8 sm:pt-2">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -40,7 +40,7 @@ const ComingSoonModal: React.FC<ComingSoonModalProps> = ({ isOpen, onClose }) =>
           {/* Description */}
           <p className="text-gray-600 mb-6 leading-relaxed">
             We're putting the finishing touches on this feature. 
-            Zen Wash will be launching in <strong>March 2025</strong> with all the amazing features you see here.
+            Zen Wash will be launching in <strong>November 2025</strong> with all the amazing features you see here.
           </p>
 
           {/* Features List */}

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Sparkles, ArrowRight, Clock } from 'lucide-react';
+import zenwashvideo from '../assets/zenwashvideo.mp4';
+
 
 interface HeroProps {
   onComingSoonClick: () => void;
@@ -16,7 +18,10 @@ const Hero: React.FC<HeroProps> = ({ onComingSoonClick }) => {
     playsInline
     className="absolute inset-0 w-full h-full object-cover z-0"
   >
-    <source src="src/assets/zenwashvideo.mp4" type="video/mp4" />
+    
+    <source src={zenwashvideo} type="video/mp4" />
+  
+
     Your browser does not support the video tag.
   </video>
 
@@ -36,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({ onComingSoonClick }) => {
 
     {/* Button */}
     <button
-      className="ml-20  -mt-10 sm:-mt-16 bg-[#E7643A] text-white font-semibold  px-2 py-2 text-sm   sm:px-12 py-2 sm:py-4 text-base sm:text-xl rounded-lg hover:bg-[#cf4e26] transition-colors duration-200"
+      className="ml-20  -mt-10 sm:-mt-16 bg-[#E7643A] text-white font-semibold  px-2 py-2 text-sm   sm:px-12  sm:py-4 text-base sm:text-xl rounded-lg hover:bg-[#cf4e26] transition-colors duration-200"
       onClick={onComingSoonClick}
     >
       COMING SOON
