@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ onComingSoonClick }) => {
     md:-mt-16
     bg-[#E7643A] text-white font-semibold
     px-4 py-2 text-sm
-    md:px-12 md:py-4 md:text-xl
+    md:px-14 md:py-4 md:text-xl
     rounded-lg hover:bg-[#cf4e26]
     transition-colors duration-200
     max-w-fit
