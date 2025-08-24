@@ -33,16 +33,26 @@ const Hero: React.FC<HeroProps> = ({ onComingSoonClick }) => {
         <h1 className="text-4xl sm:text-6xl md:text-8xl font-extrabold leading-tight">
           ZENWASH
           <br />
-          <span className=" block sm:inline">.IN</span>
+          <span className="block sm:inline">.IN</span>
         </h1>
 
         {/* Button */}
-        <button
-          className="ml-20 -mt-10 sm:-mt-16 bg-[#E7643A] text-white font-semibold px-2 py-2 text-sm sm:px-12 sm:py-4 text-base sm:text-xl rounded-lg hover:bg-[#cf4e26] transition-colors duration-200"
-          onClick={onComingSoonClick}
-        >
-          COMING SOON
-        </button>
+       <button
+  className="
+    ml-20 -mt-10
+    md:-mt-16
+    bg-[#E7643A] text-white font-semibold
+    px-4 py-2 text-sm
+    md:px-12 md:py-4 md:text-xl
+    rounded-lg hover:bg-[#cf4e26]
+    transition-colors duration-200
+    max-w-fit
+  "
+  onClick={onComingSoonClick}
+>
+  COMING SOON
+</button>
+
 
         {/* Bottom Texts */}
         <div className="mt-16 flex flex-col sm:flex-row sm:justify-between items-center gap-4 sm:gap-10 w-full max-w-5xl text-white font-medium text-xl sm:text-3xl relative z-20">
