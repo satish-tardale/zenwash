@@ -250,9 +250,7 @@ const Services: React.FC<ServicesProps> = ({ onComingSoonClick }) => {
                   {service.name}
                 </h4>
                 <p className="text-sm text-gray-600">{service.desc}</p>
-                <span className="text-xs text-blue-600 font-medium mt-2 block">
-                  Coming Soon
-                </span>
+               
               </div>
             ))}
           </div>

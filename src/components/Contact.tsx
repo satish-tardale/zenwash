@@ -20,13 +20,13 @@ const Contact: React.FC<ContactProps> = ({ onComingSoonClick }) =>{
     {
       icon: <Phone className="h-6 w-6" />,
       title: 'Call Us',
-      content: '9960435751',
+      content: ' +91 9960435751',
       description: 'Available during business hours'
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: 'Visit Us',
-      content: 'pune,loni kalbhor',
+      content: 'Pune,Uruli Kanchan-412202',
       description: 'Headquarters location'
     },
     {
