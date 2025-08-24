@@ -67,7 +67,7 @@ const Features: React.FC = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-blue-900 transition-colors duration-200">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-blue-1000 transition-colors duration-200">
                 {feature.title}
               </h3>
               <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
@@ -75,7 +75,8 @@ const Features: React.FC = () => {
               </p>
 
               {/* Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 to-blue-400/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/30 to-blue-700/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
             </div>
           ))}
         </div>

@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
           alt="Zen Wash Logo"
           className="h-14 w-18"
         />
-        <span className="text-2xl font-bold">ZenWash.In</span>
+        <span className="text-2xl font-bold">ZENWASH.IN</span>
       </div>
       <p className="text-gray-300 mb-6 leading-relaxed">
         The future of laundry delivery is here. Experience premium care,
@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex items-center space-x-3 text-sm text-gray-300">
           <Phone className="h-4 w-4 text-cyan-400" />
-          <span>9960435751</span>
+          <span>+91 9960435751</span>
         </div>
         <div className="flex items-center space-x-3 text-sm text-gray-300">
           <MapPin className="h-4 w-4 text-cyan-400" />
