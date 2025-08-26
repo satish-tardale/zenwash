@@ -25,7 +25,7 @@ const Hero: React.FC<HeroProps> = ({ onComingSoonClick }) => {
 
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
+     <div className="absolute inset-0 bg-black/40 z-10"></div>
 
       {/* Foreground Content */}
       <div className="relative z-20 flex flex-col items-center justify-center text-white px-4 mt-20">

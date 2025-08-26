@@ -8,6 +8,7 @@ import OrderTracking from './components/OrderTracking';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ComingSoonModal from './components/ComingSoonModal';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   const [isComingSoonModalOpen, setIsComingSoonModalOpen] = useState(false);
@@ -69,6 +70,8 @@ function App() {
         isOpen={isComingSoonModalOpen} 
         onClose={closeComingSoonModal} 
       />
+
+      <WhatsAppButton/>
     </div>
   );
 }
