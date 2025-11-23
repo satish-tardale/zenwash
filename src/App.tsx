@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+                                            {/*  <div className="min-h-screen bg-white">
       <Header onComingSoonClick={handleComingSoonClick} />
       <Hero onComingSoonClick={handleComingSoonClick} />
       
@@ -72,7 +72,7 @@ function App() {
       />
 
       <WhatsAppButton/>
-    </div>
+    </div> */}
   );
 }
 
